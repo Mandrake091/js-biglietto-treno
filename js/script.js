@@ -3,6 +3,8 @@ graph TD
 Biglietto_treno
     A[Chiedere quanti km vuole percorrere l'utente] -->
     B[Chiedere l'eta dell'utente]-->
+    I{Sono dei numeri?}-->|no|A
+    I-->|si|C
     C{Ha meno di 18 anni?}-->
     |si|D[Sconto 20%]
     C-->
