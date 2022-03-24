@@ -19,7 +19,7 @@ console.log('chilometri utente', userKm);
 
 let userAge = parseInt(prompt("Quanti anni hai?"));
 console.log('età utente', userAge);
-document.getElementById('userAge').innerHTML += ' ' + userAge + ' anni';
+document.getElementById('userAge').innerHTML += ' ' + userAge + ' anni.';
 
 
 let priceForKm = 0.21;
@@ -29,17 +29,20 @@ let discount40 = price - (price * 40 / 100);
 
 if (userAge >= 65) {
 
-    document.getElementById('price').innerHTML += ' ' + (price - (price - discount40)) + ' ' + '€';
-    console.log(price - (price - discount40));
-    console.log('hai risparmiato', discount40)
 
+    console.log('ha risparmiato', price - discount40);
+    console.log('costo biglietto', price - (price * 40 / 100));
+
+    document.getElementById('price').innerHTML += ' ' + (price - (price - discount40)).toFixed(2) + ' ' + '€';
+    document.getElementById('discount').innerHTML += ' ' + (price - discount40).toFixed(2) + ' ' + '€';
 
 } else if (userAge <= 18) {
 
-    document.getElementById('price').innerHTML += ' ' + (price - (price - discount20)) + ' ' + '€';
-    console.log(price - (price * 20 / 100));
-    console.log('hai risparmiato', discount20)
+    document.getElementById('price').innerHTML += ' ' + (price - (price - discount20)).toFixed(2) + ' ' + '€';
+    document.getElementById('discount').innerHTML += ' ' + (price - discount20).toFixed(2) + ' ' + '€';
+    console.log('costo biglietto', price - (price * 20 / 100));
+    console.log('ha risparmiato', price - discount20)
 
 } else
-    document.getElementById('price').innerHTML += ' ' + price + ' ' + '€';
-console.log(price);
+    document.getElementById('price').innerHTML += ' ' + price.toFixed(2) + ' ' + '€';
+    document.getElementById('discount').innerHTML += '0€';
