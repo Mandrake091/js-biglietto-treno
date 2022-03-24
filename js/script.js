@@ -1,73 +1,17 @@
-// 0, null, undefined, stringa vuota(ritorna false)
-
-
-
 /*
-let piove = 0;
-
-if (piove) {
-    alert('Sta piovendo')
-} else {
-    alert('Non sta piovendo')
-}
-
-
-let x = 10;
-let = y = 9;
-
-if (x < y) {
-    alert("x è minore di y")
-} 
-else if (x > y) {
-    alert("x è maggiore di y")
-}
-else{
-    alert("x è uguale a y")
-}
-*/
-
-/*
-const password = 'pippo51';
-
-let userPassword = prompt('Inserire password')
-if (password !== userPassword) {
-    console.log('accesso negato')
-} else {
-    console.log('accesso consentito')
-}
-
-
-let sesso = 'donna';
-let age = '31';
-
-console.log(sesso == "donna" && age <= 30);
-
-if (sesso == "donna" && age <= 30) {
-    console.log("enti gratis");
-} else {
-    console.log('paghi 50 €');
-}
-*/
-
-/*
-let frase = "Ciao Ragazzuoli";
-let fraseLength = frase.length;
-
-let userName = prompt('Inserisci Nome');
-let userNameLen = userName.length;
-
-console.log('lunghezza frase:', fraseLength);
-console.log('lunghezza username:', userNameLen);
-
-if (fraseLength > userNameLen) {
-    console.log('La lunghezza della frase è più lunga');
-
-} else if (fraseLength < userNameLen) {
-    console.log('frase più corta');
-
-} else {
-    console.log('sono uguali');
-}
+graph TD
+Biglietto_treno
+    A[Chiedere quanti km vuole percorrere l'utente] -->
+    B[Chiedere l'eta dell'utente]-->
+    C{Ha meno di 18 anni?}-->
+    |si|D[Sconto 20%]
+    C-->
+    |no|E{Ne ha più di 65?}
+    E-->|si|F[Sconto 40%]
+    E-->|no|G[Prezzo base]
+    G-->H[Mostro all'utente il costo del biglietto in base all'età]
+    D-->H
+    F-->H
 */
 
 let userKm = parseInt(prompt('Quanti km vuoi percorrere?'))
